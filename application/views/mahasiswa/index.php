@@ -1,3 +1,4 @@
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <div class="container mt-2">
     <h3 class="text-center my-3">Daftar Mahasiswa</h3>
     <div class="row my-3 justify-content-end ">
@@ -23,13 +24,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
-        <?php if ($this->session->flashdata()) : ?>
+        <!-- <?php if ($this->session->flashdata()) : ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data Mahasiswa <strong>Berhasil <?= $this->session->flashdata('flash'); ?></strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <?php $this->session->sess_destroy(); ?>
-        <?php endif; ?>
+        <?php endif; ?> -->
         <?php foreach ($mahasiswa as $mhs) : ?>
             <li class="col-lg-12 list-group-item d-flex justify-content-between align-items-center">
                 <div class="ms-2 me-auto">
@@ -39,7 +40,7 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <a href="<?= base_url() ?>mahasiswa/detail/<?= $mhs['id'] ?>" class="btn btn-success"><i class="bi bi-view-list"></i></a>
                     <a href="<?= base_url() ?>mahasiswa/ubah/<?= $mhs['id'] ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                    <a href="<?= base_url() ?>mahasiswa/hapus/<?= $mhs['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><i class="bi bi-trash3-fill"></i></a>
+                    <a href="<?= base_url() ?>mahasiswa/hapus/<?= $mhs['id'] ?>" class="tombol-hapus btn btn-danger" data-mhs="<?= $mhs['nama'] ?>"><i class=" bi bi-trash3-fill"></i></a>
                 </div>
             </li>
         <?php endforeach ?>

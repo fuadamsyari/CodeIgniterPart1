@@ -13,13 +13,12 @@ class Mahasiswa extends CI_Controller
     {
 
         $data['judul'] = 'Daftar Mahasiswa';
-
         $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswa();
         if ($this->input->post('keyword')) {
             $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswaByKey();
         }
         $this->load->view('templates/header', $data);
-        $this->load->view('mahasiswa/index',);
+        $this->load->view('mahasiswa/index');
         $this->load->view('templates/footer');
     }
 
@@ -38,14 +37,14 @@ class Mahasiswa extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->Mahasiswa_model->tambahDataMahasiswa();
-            $this->session->set_flashdata('flash', 'di tambahkan');
+            $this->session->set_flashdata('flash', 'di Tambahkan');
             redirect('mahasiswa');
         }
     }
     public function hapus($id)
     {
         $this->Mahasiswa_model->hapusDataMahasiswa($id);
-        $this->session->set_flashdata('flash', 'di hapus');
+        $this->session->set_flashdata('flash', 'di Hapus');
         redirect('mahasiswa');
     }
 
@@ -79,13 +78,4 @@ class Mahasiswa extends CI_Controller
             redirect('mahasiswa');
         }
     }
-
-    // public function cari()
-    // {
-    //     $data['judul'] = '';
-    //     $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswaByKey();
-    //     $this->load->view('templates/header', $data);
-    //     $this->load->view('mahasiswa/cari',);
-    //     $this->load->view('templates/footer');
-    // }
 }
