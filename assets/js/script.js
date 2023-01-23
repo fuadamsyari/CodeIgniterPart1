@@ -22,7 +22,7 @@ for (const tombolHapus of tombolHapuss) {
 		console.log(href);
 
 		Swal.fire({
-			title: "Hapus " + mhs + " ?",
+			title: 'Hapus "' + mhs + '" ?',
 			text: "Cancel untuk membatalkan",
 			icon: "warning",
 			showCancelButton: true,
