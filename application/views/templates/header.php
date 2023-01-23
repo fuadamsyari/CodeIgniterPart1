@@ -18,9 +18,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav text-center">
-                    <a class="nav-link" href="<?= base_url(); ?>home"">Home</a>
+                    <a class="nav-link" href="<?= base_url(); ?>home">Home</a>
                     <a class=" nav-link" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
-                    <a class="nav-link" href="<?= base_url(); ?>about"">About</a>
+                    <a class=" nav-link" href="<?= base_url(); ?>peoples">Peoples</a>
+                    <a class="nav-link" href="<?= base_url(); ?>about">About</a>
                 </div>
             </div>
         </div>
